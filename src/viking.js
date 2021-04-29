@@ -11,7 +11,6 @@ class Soldier {
 
     receiveDamage(damage) {
         this.health -= damage;
-    
     }
 }
 
@@ -50,10 +49,40 @@ const name = 'Harald';
 const strength = 150;
 const health = 300;
 
+
+
 // Saxon
 class Saxon extends Soldier {
 
+    constructor(health, strength) {
+        super(health, strength);
+    }
+
+    attack() {
+        return this.strength;
+    }
+
+    receiveDamage(damage) {
+        this.health -= damage;
+        this.damage = damage;
+
+
+        if (this.health >= 1) {
+            return `A Saxon has received ${this.damage} points of damage`;
+        } else if (this.health <= 0) {
+            return `A Saxon has died in combat`;
+        }
+    }
 }
 
+
+
 // War
-class War {}
+class War {
+
+    addViking()
+    addSaxon()
+    vikingAttack()
+    saxonAttack()
+    showStatus()
+}
